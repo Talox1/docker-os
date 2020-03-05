@@ -9,8 +9,6 @@ jobs:
       - run: pip install pystrich
       - run:
           name: Hello World x times
-          command: 
-            .
-            python app.py
+          command: python app.py
 
 
