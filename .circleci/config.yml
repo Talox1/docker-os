@@ -2,8 +2,8 @@
 version: 2.1
 
 jobs:
-  build-and-test:
-  executor: python/default
+  build:
+  working_directory: ~/docker-os
     docker:
       - image: circleci/python:3.8.1
     steps:
@@ -18,7 +18,4 @@ jobs:
             .
             python app.py
 
-workflows:
-  main:
-    jobs:
-      - build-and-test
+
