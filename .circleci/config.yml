@@ -8,6 +8,7 @@ jobs:
       - checkout
       - run: pip install pystrich
       - run: pip install redis
+      - run: pip install flask
       - run:
           name: Hello World x times
           command: python app.py
