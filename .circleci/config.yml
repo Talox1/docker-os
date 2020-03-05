@@ -1,0 +1,29 @@
+  
+version: 2.1
+
+orbs:
+  python: circleci/python@0.2.1
+
+jobs:
+  build-and-test:
+  executor: python/default
+    docker:
+      - image: circleci/python:3.8.1
+    steps:
+      - checkout
+      - python/load-cache
+      - python/install-deps
+      - python/save-cache
+      - run:
+          command: ./manage.py test
+          name: Test
+      - run:
+        name: Hello World x times
+        command: 
+          .
+          python app.py
+
+workflows:
+  main:
+    jobs:
+      - build-and-test
