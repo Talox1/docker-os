@@ -7,6 +7,7 @@ jobs:
     steps:
       - checkout
       - run: pip install pystrich
+      - run: pip install redis
       - run:
           name: Hello World x times
           command: python app.py
