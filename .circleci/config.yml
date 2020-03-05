@@ -6,9 +6,6 @@ jobs:
       - image: circleci/python:3.8.1
     steps:
       - checkout
-      - python/load-cache
-      - python/install-deps
-      - python/save-cache
       - run: pip install pystrich
       - run:
           name: Hello World x times
